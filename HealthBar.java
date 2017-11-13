@@ -11,19 +11,26 @@ public class HealthBar extends Actor
 {
     //Need to add constants here
     private final int WIDTH = 200; 
+    
     private final int HEIGHT = 30; 
 
     private GreenfootImage frame;
+    
     private GreenfootImage healthBar;
 
     private Color good;
+    
     private Color warning;
+    
     private Color danger;
 
     //Need to add code here 
     private int max;
+    
     private int current;
+    
     private int speed;
+    
     private int target;
 
     /**
@@ -36,19 +43,26 @@ public class HealthBar extends Actor
     {
         //Need to add code 
         frame = new GreenfootImage( WIDTH, HEIGHT );
+        
         healthBar = new GreenfootImage( WIDTH, HEIGHT );
 
         frame.setColor( Color.GRAY );
+        
         frame.fillRect(0, 0, WIDTH, HEIGHT);
 
         good = Color.GREEN;
+        
         warning = Color.YELLOW;
+        
         danger = Color.RED;
 
         //Need to add code
-        max = 700;
-        current = 700;
+        max = 2500;
+        
+        current = 2500;
+        
         target = current;
+        
         speed = 1;
 
         updateBar();
@@ -67,19 +81,27 @@ public class HealthBar extends Actor
 
         //Need to add code
         frame = new GreenfootImage( WIDTH, HEIGHT );
+        
         healthBar = new GreenfootImage( WIDTH, HEIGHT );
 
         frame.setColor( Color.GRAY );
+        
         frame.fillRect(0, 0, WIDTH, HEIGHT);
 
         good = Color.GREEN;
+        
         warning = Color.YELLOW;
+        
         danger = Color.RED;
+        
 
         //Need to add code 
         max = m;
+        
         current = c;
+        
         target = current;
+        
         speed = s;
 
         updateBar();
@@ -147,17 +169,26 @@ public class HealthBar extends Actor
         }
 
         healthBar.clear();
+        
         healthBar.fillRect( 0, 0, healthWidth, HEIGHT );
 
         text.clear();
+        
         text.setColor( Color.BLACK );
+        
         text.setFont( new Font( "Times New Roman", Font.PLAIN, 20 ) );
+        
         text.drawString(current + " / " + max, 0, HEIGHT-text.getFont().getSize()/2);
+        
 
         frame.clear();
+        
         frame.setColor( Color.GRAY );
+        
         frame.fillRect(0, 0, WIDTH, HEIGHT);
+        
         frame.drawImage( healthBar, 0, 0 );
+        
         frame.drawImage( text, WIDTH/3, 0 );
 
         setImage( frame );
